@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+void printArr(int *ptr,int size)
+{
+    for(int i =0;i<size;i++)
+    {
+        cout << ptr[i]<< " ";
+    }
+    cout << endl;
+}
+int *multiply(int *ptr1,int size1,int *ptr2,int size2)
+{
+    int size3 = size1*size2;
+    int *ptr3{nullptr};
+    ptr3 = new int[size3];
+    int value=0;
+    for(int i=0;i<size1;i++)
+    {
+        for(int j=0;j<size2;j++)
+        {
+            ptr3[value] = ptr1[i]*ptr2[j];
+            value++;
+        }
+    }
+    return ptr3;
+}
+int main()
+{
+    int arr1[]= {1,2,3,4,5};
+    int arr2[] = {1,2,3};
+    
+    printArr(arr1,5);
+    printArr(arr2,3);
+    
+    int * arr3 = multiply(arr1,5,arr2,3);
+    printArr(arr3,15);
+    
+
+    return 0;
+}
