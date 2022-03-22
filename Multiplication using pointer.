@@ -34,9 +34,9 @@ int main()
     printArr(arr1,5);
     printArr(arr2,3);
     
-    int * arr3 = multiply(arr1,5,arr2,3);
-    printArr(arr3,15);
+    int * result = multiply(arr1,5,arr2,3);
+    printArr(result,15);
     
-
+    delete [] result;
     return 0;
 }
